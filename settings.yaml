@@ -1,78 +1,29 @@
 brand_name:
-  default: ""
+  default: "Khulnasoft"
 website_url:
-  default: ""
+  default: "https://khulnasoft.com"
 logo_url:
-  default: ""
+  default: "https://github.com/khulnasoft/developer-relations/blob/main/community/Assets/logo_for_brand_header.png?raw=true"
 mobile_logo_url:
-  default: ""
-
+  default: "https://github.com/khulnasoft/developer-relations/blob/main/community/Assets/logo_for_brand_header.png?raw=true"
 links:
-  type: objects
-  default: []
-  schema:
-    name: link
-    properties:
-      text:
-        type: string
-        required: true
-        validations:
-          min_length: 1
-          max_length: 100
-      url:
-        type: string
-        required: true
-        validations:
-          min_length: 1
-          max_length: 2048
-          url: true
-      target:
-        type: enum
-        default: _blank
-        choices:
-          - _blank
-          - _self
-          - _parent
-          - _top
-
+  type: list
+  list_type: simple
+  default: >-
+    Get the Agent, https://learn.khulnasoft.com/docs/get, _blank|
+    Sign into Cloud, https://app.khulnasoft.com, _blank|
+    Khulnasoft Learn, https://learn.khulnasoft.com, _blank|
+    Help, https://khulnasoft.com/community, _blank
 icons:
-  type: objects
-  default: []
-  schema:
-    name: icon
-    properties:
-      icon_name:
-        type: string
-        required: true
-        validations:
-          min_length: 1
-          max_length: 100
-      url:
-        type: string
-        required: true
-        validations:
-          min_length: 1
-          max_length: 2048
-          url: true
-      target:
-        type: enum
-        default: _blank
-        choices:
-          - _blank
-          - _self
-          - _parent
-          - _top
-
+  type: list
+  list_type: simple
+  default: ""
+  description: "Format: icon-name,url,target (optional)"
 custom_font_awesome_icons:
   type: list
   list_type: simple
   default: ""
+  description: "List of FontAwesome 5 icons used in this theme component"
 show_bar_on_mobile:
   type: bool
   default: false
-plugin_outlet:
-  default: "above-site-header"
-  type: enum
-  choices:
-    - "above-site-header"
-    - "below-site-header"
